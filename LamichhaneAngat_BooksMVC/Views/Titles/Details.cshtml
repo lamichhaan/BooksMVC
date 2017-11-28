@@ -1,0 +1,60 @@
+﻿@model LamichhaneAngat_BooksMVC.Models.Title
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Title</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditionNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditionNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Copyright)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Copyright)
+        </dd>
+
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Author Name</th>
+                </tr>
+
+                @foreach (var item in Model.Authors)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>w
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ISBN }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
